@@ -30,17 +30,7 @@ jobs:
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp --print urls https://www.youtube.com/@filmatolyesi/live)
-        EOL
-
-    - name: Get KemalSunalTV
-      run: |
-        touch ./film/kemalsunaltv.m3u8
-        sudo cat >./film/kemalsunaltv.m3u8 <<EOL
-        #EXTM3U
-        #EXT-X-VERSION:3
-        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp --print urls https://www.youtube.com/@KemalSunalTV/live)
+        $(yt-dlp --print urls https://www.youtube.com/c/FilmAtöyesi/live)
         EOL
 
     - name: Get KemalSunalFilmleri
@@ -91,16 +81,6 @@ jobs:
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(yt-dlp --print urls https://www.youtube.com/@TurkFilmleri-TV/live)
-        EOL
-
-    - name: Get MuratFilm
-      run: |
-        touch ./film/muratfilm.m3u8
-        sudo cat >./film/muratfilm.m3u8 <<EOL
-        #EXTM3U
-        #EXT-X-VERSION:3
-        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-        $(yt-dlp --print urls https://www.youtube.com/@MuratFilm/live)
         EOL
 
     - name: Get TurkFilmleri1onMedya

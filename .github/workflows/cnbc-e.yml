@@ -1,7 +1,7 @@
-name: CNBC-e
+name: Eurostar
 on:
   schedule:
-    - cron: '16 */02 * * *'
+    - cron: '10 */20 * * *'
 
   pull_request:
     branches:
@@ -19,7 +19,7 @@ jobs:
       - name: config
         run: |
           git config --global user.email "<>"
-          git config --global user.name "Show bot"
+          git config --global user.name "Eurostar bot"
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,8 +34,7 @@ jobs:
         run: python3 -m pip install requests
 
       - name: Execute Python script
-        run: python3 py/cnbc-e.py > ch/cnbc-e.m3u8
-
+        run: python3 py/eurostar.py > ch/eurostar.m3u8
 
       - name: git add
         run: |

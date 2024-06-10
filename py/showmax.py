@@ -2,8 +2,8 @@ import requests
 import re
 import json
 
-base_url = "https://ciner-live.ercdn.net/showmax/"
-url = "http://www.showmax.com.tr/canliyayin"
+base_url = "https://cnbc-e-live.ercdn.net/cnbce/"
+url = "https://www.cnbce.com/canli-yayin"
 response = requests.get(url)
 
 if response.status_code == 200:
@@ -28,7 +28,7 @@ if response.status_code == 200:
                     modified_content = ""
                     
                     for line in lines:
-                        if line.startswith("showmax"):
+                        if line.startswith("cnbce"):
                             full_url = base_url + line
                             modified_content += full_url + "\n"
                         else:

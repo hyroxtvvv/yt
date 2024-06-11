@@ -1,4 +1,4 @@
-name: Film
+name: YT-Live
 on:
   schedule:
     - cron: '0 0/3 * * *'
@@ -31,6 +31,16 @@ jobs:
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
         $(yt-dlp --print urls https://www.youtube.com/c/FilmAt%C3%B6lyesi/live)
+        EOL
+
+    - name: Get CNBC-e
+      run: |
+        touch ./tv/cnbc-e.m3u8
+        sudo cat >./tv/cnbc-e.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
+        $(yt-dlp --print urls https://www.youtube.com/@cnbce/live)
         EOL
 
     - name: Get KemalSunalFilmleri
